@@ -15,6 +15,7 @@ function verificaChute(e) {
         document.body.innerHTML = 
         `<h2>Você acertou!</h2>
         <h3>O número secreto era ${sortear}</h3>
+        <button id="btnJogar" class="btn">Jogar Novamente</button>
         ` 
     } else if (numero > sortear) {
         elementoChute.innerHTML += 
@@ -28,3 +29,9 @@ function verificaChute(e) {
         `
     }
 }
+
+document.body.addEventListener('click', (e) => {
+    if(e.target.id == "btnJogar"){ //utilizo dessa forma porque o botão ainda não foi criado no html
+        window.location.reload();
+    }
+})
